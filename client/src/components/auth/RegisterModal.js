@@ -1,5 +1,5 @@
 import React ,{useState}from 'react'
-import {Alert,Modal,ModalBody,ModalHeader,ModalFooter,Button,InputGroup,InputGroupText,Input} from "reactstrap"
+import {Alert,Modal,ModalBody,ModalHeader,ModalFooter,Button,InputGroup,InputGroupText,Input,NavItem,NavLink} from "reactstrap"
 import { registeUser } from '../../redux/actions'
 import {useDispatch, useSelector} from "react-redux"
 import { useNavigate } from 'react-router-dom'
@@ -34,26 +34,31 @@ toggle()
 
   return (
     <div>
-         <Button color="danger" onClick={toggle}>
-register      </Button>
+
+          <NavItem>
+          <NavLink href="#" onClick={toggle} >
+     
+          <strong className="navbar-text mr-3"> Register</strong> 
+       
+          </NavLink>
+          </NavItem>
+
       <Modal isOpen={modal} toggle={toggle} >
         <ModalHeader toggle={toggle}>Register</ModalHeader>
         <ModalBody>
 
           <InputGroup>
-    <Input placeholder="name" onChange={(event)=>setName(event.target.value)} />
+    <Input style={{marginBottom:"10px"}} placeholder="Name" onChange={(event)=>setName(event.target.value)} />
   </InputGroup>
   <InputGroup>
-    <Input placeholder="lastName" onChange={(event)=>setLastName(event.target.value)}/>
+    <Input style={{marginBottom:"10px"}} placeholder="Last Name" onChange={(event)=>setLastName(event.target.value)}/>
   </InputGroup>
   <InputGroup>
-    <Input placeholder="email" onChange={(event)=>setEmail(event.target.value)} />
-    <InputGroupText>
-      @example.com
-    </InputGroupText>
+    <Input style={{marginBottom:"10px"}} placeholder="Johndoe@example.com" onChange={(event)=>setEmail(event.target.value)} />
+  
   </InputGroup>
   <InputGroup>
-    <Input placeholder="password" onChange={(event)=>setPassword(event.target.value)}/>
+    <Input style={{marginBottom:"10px"}} placeholder="Password" onChange={(event)=>setPassword(event.target.value)}/>
   </InputGroup>
   <InputGroup>
 

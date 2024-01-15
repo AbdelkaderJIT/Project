@@ -6,6 +6,9 @@ import {Link} from "react-router-dom"
 import {useDispatch, useSelector} from "react-redux"
 import { logoutUser } from '../../redux/actions'
 import { useNavigate } from 'react-router-dom'
+import './AppNavBar.css'
+
+
 function AppNavBar() {
     const [isOpen,setIsOpen]=useState(false)
     const toggle=()=>{
@@ -25,13 +28,13 @@ const handleLogout=()=>{
 }
     const guestLinks = (
         <>
-          <NavItem>
+          <NavItem className='NavStyle'>
             <RegisterModal />
           </NavItem>
           <NavItem>
             <LoginModal />
           </NavItem>
-        </>
+          </>
       );
 
       const authLinks = (

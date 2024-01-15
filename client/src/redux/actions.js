@@ -1,5 +1,6 @@
 import { ERRORS, GET_AUTH_USER, LOGIN_USER, LOGOUT_USER, REGISTER_USER, ADD_FOOD } from "./actionTypes"
 import axios from "axios"
+
 export const registeUser=(formdata,navigate)=>async(dispatch)=>{
 try{
 const res=await axios.post("http://localhost:5001/api/auth/register",formdata)
